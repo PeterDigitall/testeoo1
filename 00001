@@ -1,19 +1,22 @@
-def binary_search(arr, target):
-    low = 0
-    high = len(arr) - 1
+<!DOCTYPE html>
+<html>
+<body>
 
-    while low <= high:
-        mid = (low + high) // 2
-        guess = arr[mid]
-        if guess == target:
-            return mid
-        elif guess > target:
-            high = mid - 1
-        else:
-            low = mid + 1
-    return None
+<h2>IVA Calculator</h2>
 
-# Test the function
-arr = [1, 3, 5, 7, 9]
-print(binary_search(arr, 3))  # Output: 1
-print(binary_search(arr, -1))  # Output: None
+<div class="container">
+  <input id="amount" type="number" placeholder="Enter amount">
+  <button onclick="calculateIVA()">Calculate IVA</button>
+  <p id="result"></p>
+</div>
+
+<script>
+function calculateIVA() {
+  var amount = document.getElementById('amount').value;
+  var IVA = Number(amount) * 0.16;
+  document.getElementById('result').innerHTML = 'The IVA is: ' + IVA.toFixed(2);
+}
+</script>
+
+</body>
+</html>
